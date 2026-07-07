@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3CC SUITE HUB</title>
+    <style>
+        :root { --gold: #d4af37; --bg: #0a0a0a; }
+        body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* Glassmorphism Header */
+        .header { width: 100%; text-align: center; padding: 40px; background: rgba(0,0,0,0.5); border-bottom: 2px solid var(--gold); }
+        .clock { font-size: 2.5rem; color: var(--gold); font-weight: bold; margin-bottom: 10px; }
+        
+        /* Grid Layout para sa Apps */
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 90%; max-width: 1000px; margin-top: 40px; }
+        
+        .card { 
+            background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3); transition: 0.4s; text-decoration: none; color: white;
+        }
+        .card:hover { transform: translateY(-10px); background: var(--gold); color: black; }
+        .card h2 { margin: 0; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div id="clock" class="clock">00:00:00 AM</div>
+        <div id="date">July 07, 2026</div>
+        <h1>P3CC SUITE HUB</h1>
+    </div>
+
+    <div class="hub-grid">
+        <a href="https://project3communitychapter-byte.github.io/P3CC-DISASTER-RESPONSE-PORTAL/" class="card">
+            <h2>🚨 Disaster Portal</h2>
+        </a>
+        <a href="#" class="card">
+            <h2>📊 P3CC Analytics</h2>
+        </a>
+        <a href="#" class="card">
+            <h2>📂 Records Management</h2>
+        </a>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            document.getElementById('date').innerText = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
