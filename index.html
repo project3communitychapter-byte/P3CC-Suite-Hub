@@ -8,7 +8,7 @@
         :root { --gold: #d4af37; --bg-overlay: rgba(0, 0, 0, 0.7); }
         
         body { 
-            /* Dito inilagay ang iyong background1.png */
+            /* Dito inilapat ang background1.png */
             background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('background1.png');
             background-size: cover;
             background-position: center;
@@ -22,31 +22,17 @@
             flex-direction: column; 
             align-items: center; 
         }
+
+        .header { text-align: center; padding: 30px; }
+        .logo { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--gold); margin-bottom: 20px; }
+        .clock { font-size: 3rem; color: var(--gold); font-weight: bold; }
+        .date { font-size: 1.2rem; color: #ccc; margin-bottom: 20px; }
         
-        .header { 
-            width: 100%; 
-            text-align: center; 
-            padding: 40px; 
-            background: rgba(0,0,0,0.6); 
-            border-bottom: 2px solid var(--gold); 
-            backdrop-filter: blur(5px);
-        }
-        
-        .clock { font-size: 3rem; color: var(--gold); font-weight: bold; margin-bottom: 5px; text-shadow: 2px 2px 4px black; }
-        .date { font-size: 1.2rem; color: #ccc; margin-bottom: 10px; }
-        
-        .hub-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 25px; 
-            width: 90%; 
-            max-width: 1000px; 
-            margin-top: 50px; 
-        }
+        .main-container { flex: 1; display: flex; align-items: center; justify-content: center; }
         
         .card { 
             background: rgba(0, 0, 0, 0.7); 
-            padding: 40px; 
+            padding: 40px 60px; 
             border-radius: 20px; 
             text-align: center;
             border: 1px solid var(--gold); 
@@ -56,40 +42,34 @@
             backdrop-filter: blur(10px);
         }
         
-        .card:hover { 
-            transform: translateY(-10px); 
-            background: var(--gold); 
-            color: black; 
-            box-shadow: 0 0 20px var(--gold);
-        }
+        .card:hover { transform: scale(1.05); background: var(--gold); color: black; box-shadow: 0 0 20px var(--gold); }
         
-        .card h2 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        footer { width: 100%; text-align: center; padding: 20px; background: rgba(0,0,0,0.8); border-top: 1px solid var(--gold); font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div id="clock" class="clock">00:00:00 AM</div>
+        <img src="p3cc.png" alt="P3CC Logo" class="logo">
+        <div id="clock" class="clock">00:00:00 PM</div>
         <div id="date" class="date">--</div>
         <h1>P3CC SUITE HUB</h1>
     </div>
 
-    <div class="hub-grid">
+    <div class="main-container">
         <a href="https://project3communitychapter-byte.github.io/P3CC-DISASTER-RESPONSE-PORTAL/" class="card">
-            <h2>🚨 Disaster Portal</h2>
-        </a>
-        <a href="#" class="card">
-            <h2>📊 P3CC Analytics</h2>
-        </a>
-        <a href="#" class="card">
-            <h2>📂 Records Management</h2>
+            <h2>🚨 DISASTER RESPONSE PORTAL</h2>
         </a>
     </div>
+
+    <footer>
+        <p style="font-style:italic;">"A TRISKELION is a brother unto his fellow TRISKELION."</p>
+        <p>© 2026 P3CC SUITE HUB | System developed by Tol Ron "INSAN"</p>
+    </footer>
 
     <script>
         function updateTime() {
             const now = new Date();
-            // 12-hour format na may AM/PM
             document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             document.getElementById('date').innerText = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         }
