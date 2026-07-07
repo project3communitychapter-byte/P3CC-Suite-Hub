@@ -29,7 +29,6 @@
         
         .main-container { flex: 1; display: flex; align-items: center; justify-content: center; }
         
-        /* Card na may portal logo */
         .card { 
             background: rgba(0, 0, 0, 0.7); 
             padding: 20px; 
@@ -46,10 +45,13 @@
         }
         
         .portal-img { width: 300px; height: auto; margin-bottom: 15px; border-radius: 10px; }
-        
         .card:hover { transform: scale(1.05); background: var(--gold); color: black; box-shadow: 0 0 20px var(--gold); }
         
-        footer { width: 100%; text-align: center; padding: 20px; background: rgba(0,0,0,0.8); border-top: 1px solid var(--gold); font-size: 0.9rem; margin-top: 20px; }
+        /* Footer Styling */
+        footer { width: 100%; padding: 20px; background: rgba(0,0,0,0.8); border-top: 1px solid var(--gold); text-align: center; }
+        .fb-section { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
+        .fb-logo { width: 30px; height: 30px; border-radius: 5px; }
+        .fb-link { color: var(--gold); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -62,16 +64,19 @@
     </div>
 
     <div class="main-container">
-        <!-- Dito pumasok ang iyong portal_2.jpg -->
         <a href="https://project3communitychapter-byte.github.io/P3CC-DISASTER-RESPONSE-PORTAL/" class="card">
-            <img src="portal.png" alt="Disaster Portal" class="portal-img">
+            <img src="portal_2.jpg" alt="Disaster Portal" class="portal-img">
             <h2>DISASTER RESPONSE PORTAL</h2>
         </a>
     </div>
 
     <footer>
         <p style="font-style:italic;">"A TRISKELION is a brother unto his fellow TRISKELION."</p>
-        <p>© 2026 P3CC SUITE HUB | System developed by Tol Ron "INSAN"</p>
+        <div class="fb-section">
+            <img src="fb.jpg" alt="FB" class="fb-logo">
+            <a href="https://www.facebook.com/TriskelionProject3CommunityChapter" target="_blank" class="fb-link">Kindly visit to our official page</a>
+        </div>
+        <p style="margin-top: 10px; font-size: 0.8rem;">© 2026 P3CC SUITE HUB | System developed by Tol Ron "INSAN"</p>
     </footer>
 
     <script>
